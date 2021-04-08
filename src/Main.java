@@ -10,14 +10,23 @@ public class Main {
         pq.add(new Ticket(20, true));
         pq.add(new Ticket(60, false));
         pq.add(new Ticket(50, false));
-        for (Ticket i : pq) {
-            if (i.isVIP() == true) {
-                System.out.println(i.isVIP());
-            }
-        }
-        System.out.println("-----------------------------");
+
+        PriorityQueue<Ticket> pq1 = new PriorityQueue<>(new TicketComparator2());
+        pq1.add(new Ticket(40, true));
+        pq1.add(new Ticket(15, false));
+        pq1.add(new Ticket(70, true));
+        pq1.add(new Ticket(30, false));
+        pq1.add(new Ticket(20, true));
+        pq1.add(new Ticket(60, false));
+        pq1.add(new Ticket(50, false));
+
+
         while (!pq.isEmpty()) {
             System.out.println(pq.poll().getCost());
+        }
+        System.out.println("-----------------------------");
+        while (!pq1.isEmpty()) {
+            System.out.println(pq1.poll().isVIP());
         }
 
     }
